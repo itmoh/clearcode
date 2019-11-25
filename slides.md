@@ -152,6 +152,61 @@
 
 # Patterns
 
+Шаблон – это «повторяемая архитектурная конструкция, представляющая собой решение проблемы проектирования в рамках некоторого часто возникающего контекста»
+
+Важно уметь выделять шаблоны, потому что они:
+
+- Помогают писать более эффективный программный код
+- Представляют дополнительный уровень абстракции
+- Упрощают дискуссию между разработчиками
+
+Мы рассмотрим следующие типы шаблонов:
+
+- Шаблоны проектирования
+- Шаблоны кодирования
+- Антишаблоны
+
+JS patterns
+
+- Callback function
+  <!-- Функция обратного вызова – это функция, которая передается в качестве параметра в другую функцию, и в определенный момент будет вызвана из этой функции. -->
+- Немедленно вызываемая функция
+  <!-- Немедленно вызываемая функция – синтаксическая конструкция, позволяющая вызвать функцию в точке ее определения. -->
+- Closure
+  <!-- Замыкание – это функция и окружение, в которой была создана данная функция. -->
+- memoize
+  <!-- Мемоизация – прием кэширования результатов функции. -->
+- Currying
+  <!-- Каррирование – процесс преобразования функции от многих аргументов в функцию, берущую аргументы по одному. -->
+- Namespaces
+  <!-- Пространства имен – в JavaScript нет специальной конструкции для определения пространства имен. Для того что бы избежать конфликтов имен необходимо использовать глобальный объект. -->
+- Module
+  <!-- Шаблон «модуль» - позволяет структурировать и организовывать программный код по мере увеличения его объема. -->
+
+* Singleton
+* Factory
+  <!-- Фабрика – паттерн использующийся для создания объектов. -->
+* Iterator
+  <!-- Итератор – представляет собой объект, позволяющий получить последовательный доступ к элементам объекта-агрегата. -->
+* Decorator
+  <!-- Декоратор – паттерн позволяет динамически подключить поведение к объекту.  -->
+* Strategy
+  <!-- Стратегия – предназначен для определения семейств алгоритмов и выбора их на этапе выполнения. При этом, для пользователя программного кода, интерфейс объекта остаётся без изменений даже при смене использующегося алгоритма. -->
+* Facade
+  <!-- Фасад – шаблон позволяет скрыть сложность объекта предоставив альтернативный интерфейс для работы. -->
+* Proxy
+  <!-- Прокси – объект, который контролирует доступ к другому объекту. -->
+* Mediator
+  <!-- Посредник– шаблон, обеспечивающий взаимодействие множества объектов, формируя при этом слабую связанность и избавляя объекты от необходимости явно ссылаться друг на друга. -->
+* Observer
+  <!-- Наблюдатель – создает механизм, который позволяет одному объекту получать оповещения от других объектов. -->
+
+### React patterns
+
+- HOC
+
+- Render props
+
 > **Design patterns** are typical solutions to commonly occurring problems in software design.
 
 - Creational patterns
@@ -159,6 +214,23 @@
 - Behavioral patterns
 
 # [Antipatterns](https://deviq.com/antipatterns/)
+
+- The Blob
+- Continuous Obsolescence
+- Lava Flow
+- Ambiguous Viewpoint
+- Functional Decomposition
+- Poltergeists
+- Boat Anchor
+- Golden Hammer
+- Dead End
+- Spaghetti Code
+- Input Kludge
+- Walking through a Minefield
+- Cut-And-Paste Programming
+- Mushroom Management
+
+> [Software Development AntiPatterns](https://sourcemaking.com/antipatterns/software-development-antipatterns)
 
 <!--
 Anti patterns :
@@ -186,37 +258,74 @@ Bloaters are code, methods and classes that have increased to such gargantuan pr
 -->
 
 - Long Method
+
 - Large Class
+
 - Data Clumps
+
+  <!-- Sometimes different parts of the code contain identical groups of variables (such as parameters for connecting to a database).  -->
+
 - Long Parameter List
+
 - Primitive Obsession
 
 ### Tool Abusers
 
 - Switch Statements
+
+  <!-- You have a complex `switch` operator or sequence of `if` statements. -->
+
 - Refused Bequest
+
+  <!-- If a subclass uses only some of the methods and properties inherited from its parents, the hierarchy is off-kilter. The unneeded methods may simply go unused or be redefined and give off exceptions. -->
+
 - Alternative Classes w/ Different Interfaces
+
+  <!-- Two classes perform identical functions but have different method names. -->
+
 - Temporary Field
+
+  <!-- Temporary fields get their values (and thus are needed by objects) only under certain circumstances. Outside of these circumstances, they’re empty. -->
 
 ### Change Preventers
 
 - Divergent Change
+
+  <!-- *Divergent Change* is when many changes are made to a single class.
+  Single responsibility principle violation -->
+
 - Shotgun Surgery
+
+  <!-- Making any modifications requires that you make many small changes to many different classes. -->
+
 - Parallel Inheritance Hierarchies
+
+  <!-- Whenever you create a subclass for a class, you find yourself needing to create a subclass for another class. -->
 
 ### Dispensables
 
+<!-- A dispensable is something pointless and unneeded whose absence would make the code cleaner, more efficient and easier to understand. -->
+
+- Comments
 - Lazy class
+  <!-- Understanding and maintaining classes always costs time and money. So if a class doesn’t do enough to earn your attention, it should be deleted. -->
 - Speculative Generality
+  <!-- There’s an unused class, method, field or parameter. -->
 - Data Class
+- Dead Code
+  <!-- A variable, parameter, field, method or class is no longer used (usually because it’s obsolete). -->
 - Duplicated Code
 
 ### Couplers
 
 - Feature Envy
+  <!-- A method accesses the data of another object more than its own data. -->
 - Inappropriate Intimacy
+  <!-- One class uses the internal fields and methods of another class. -->
 - Manage Chains
+  <!-- In code you see a series of calls resembling $a->b()->c()->d() -->
 - Middle Man
+  <!-- If a class performs only one action, delegating work to another class, why does it exist at all? -->
 
 ## When to refactor
 
@@ -240,9 +349,11 @@ Bloaters are code, methods and classes that have increased to such gargantuan pr
 - How to find bad code
   - Git history(most edited files)
 
-* CAP theorem
-
 # wrapping up
+
+## OK
+
+![thats ok](./images/photo_2019-11-16_19-47-17.jpg)
 
 ## Tips
 
@@ -251,11 +362,13 @@ Bloaters are code, methods and classes that have increased to such gargantuan pr
 3. Write code that expresses intent
 4. Comments are often lies waiting to happen. Code should speak for itself whenever possible
 5. "Boy Scout Rule"
-6. Single responsebility principle
-7. Write tests
-8. Work in short cycles: incremental and iteractive
-9. Independent Architecture
-10. Practice, practice, practice
+6. ["Broken windows theory"](https://en.wikipedia.org/wiki/Broken_windows_theory)
+7. Single responsebility principle
+8. Write tests
+9. Work in short cycles: incremental and iteractive
+10. Independent Architecture
+11. Composition over inheritence
+12. Practice, practice, practice
 
 ## Kids vs Legends
 
@@ -268,3 +381,7 @@ Questions?
 ## Some links
 
 - [Code Refactoring: Learn Code Smells And Level Up Your Game!](https://youtu.be/D4auWwMsEnY)
+
+TODO
+
+- CAP theorem
