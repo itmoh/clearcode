@@ -29,36 +29,34 @@
 
 ## Clean code
 
-- Clean code is obvious for other programmers.
-- Clean code doesn’t contain duplication.
-- Clean code contains a minimal number of classes and other moving parts.
-- Clean code passes all tests.
-- Clean code is easier and cheaper to maintain!
+- Obvious for other programmers.
+- Doesn’t contain duplication.
+- Contains a minimal number of classes and other moving parts.
+- Passes all tests.
+- Is easier and cheaper to maintain!
 
 ## Principles
 
+- **DRY** - Don't repeat yourself
+- **KISS** - Keep it simple stupid
+- **YAGNI** - You aren't gonna need it
 - **SOLID**
   - **S** - Single-responsiblity principle
   - **O** - Open-closed principle
   - **L** - Liskov substitution principle
   - **I** - Interface segregation principle
   - **D** - Dependency Inversion Principle
-- **DRY** - Don't repeat yourself
-- **KISS** - Keep it simple stupid
-- **YAGNI** - You aren't gonna need it
-
-## Paradigms
-
-- Procedural programming
-- OOP
-- FP
-- Aspect-oriented programming
+    <!--
+    High-level modules should not depend on low-level modules. Both should depend on abstractions (e.g. interfaces).
+    Abstractions should not depend on details. Details (concrete implementations) should depend on abstractions.
+    -->
 
 ## How to ensure
 
+- Patterns/Best practices
 - Stylegides/linting of the code
 - Sonar
-- Cyclomatic complexity
+  <!-- Cyclomatic complexity -->
 - Loose coupling and high cohesion
   <!--
     Cohesion refers to the degree to which the elements of a module/class belong together, it is suggested that the related code should be close to each other, so we should strive for high cohesion and bind all related code together as close as possible. It has to do with the elements within the module/class.
@@ -152,34 +150,22 @@
 
 # Patterns
 
-Шаблон – это «повторяемая архитектурная конструкция, представляющая собой решение проблемы проектирования в рамках некоторого часто возникающего контекста»
+> **Design patterns** are typical solutions to commonly occurring problems in software design.
 
-Важно уметь выделять шаблоны, потому что они:
+- Creational patterns
+- Structural patterns
+- Behavioral patterns
 
-- Помогают писать более эффективный программный код
-- Представляют дополнительный уровень абстракции
-- Упрощают дискуссию между разработчиками
+  <!-- Помогают писать более эффективный программный код. Представляют дополнительный уровень абстракции. Упрощают дискуссию между разработчиками -->
 
-Мы рассмотрим следующие типы шаблонов:
-
-- Шаблоны проектирования
-- Шаблоны кодирования
-- Антишаблоны
-
-JS patterns
+## JS patterns
 
 - Callback function
   <!-- Функция обратного вызова – это функция, которая передается в качестве параметра в другую функцию, и в определенный момент будет вызвана из этой функции. -->
-- Немедленно вызываемая функция
+- Immediately called function
   <!-- Немедленно вызываемая функция – синтаксическая конструкция, позволяющая вызвать функцию в точке ее определения. -->
-- Closure
-  <!-- Замыкание – это функция и окружение, в которой была создана данная функция. -->
 - memoize
   <!-- Мемоизация – прием кэширования результатов функции. -->
-- Currying
-  <!-- Каррирование – процесс преобразования функции от многих аргументов в функцию, берущую аргументы по одному. -->
-- Namespaces
-  <!-- Пространства имен – в JavaScript нет специальной конструкции для определения пространства имен. Для того что бы избежать конфликтов имен необходимо использовать глобальный объект. -->
 - Module
   <!-- Шаблон «модуль» - позволяет структурировать и организовывать программный код по мере увеличения его объема. -->
 
@@ -204,16 +190,11 @@ JS patterns
 ### React patterns
 
 - HOC
-
 - Render props
 
-> **Design patterns** are typical solutions to commonly occurring problems in software design.
-
-- Creational patterns
-- Structural patterns
-- Behavioral patterns
-
 # [Antipatterns](https://deviq.com/antipatterns/)
+
+> [Software Development AntiPatterns](https://sourcemaking.com/antipatterns/software-development-antipatterns)
 
 - The Blob
 - Continuous Obsolescence
@@ -230,18 +211,15 @@ JS patterns
 - Cut-And-Paste Programming
 - Mushroom Management
 
-> [Software Development AntiPatterns](https://sourcemaking.com/antipatterns/software-development-antipatterns)
+## Antipatterns
 
-<!--
-Anti patterns :
-Create tons of functions
-Use as many one-liners and cryptic code as possible
-Use recursion
-Comments
-Add code, that you might need but never will
-Use lots of variables
-refectoring the code, because you think it is messy
--->
+- Create tons of functions
+- Use as many one-liners and cryptic code as possible
+- Use recursion
+- Comments
+- Add code, that you might need but never will
+- Use lots of variables
+- Refectoring the code, because you think it is messy
 
 # Code smells/Refactoring
 
@@ -249,9 +227,9 @@ refectoring the code, because you think it is messy
 
 > **code smell** is any characteristic in the source code of a program that possibly indicates a deeper problem
 
-## Groups
+# Groups
 
-### Bloaters
+## Bloaters
 
 <!--
 Bloaters are code, methods and classes that have increased to such gargantuan proportions that they are hard to work with. Usually these smells do not crop up right away, rather they accumulate over time as the program evolves (and especially when nobody makes an effort to eradicate them).
@@ -269,7 +247,7 @@ Bloaters are code, methods and classes that have increased to such gargantuan pr
 
 - Primitive Obsession
 
-### Tool Abusers
+## Tool Abusers
 
 - Switch Statements
 
@@ -287,7 +265,7 @@ Bloaters are code, methods and classes that have increased to such gargantuan pr
 
   <!-- Temporary fields get their values (and thus are needed by objects) only under certain circumstances. Outside of these circumstances, they’re empty. -->
 
-### Change Preventers
+## Change Preventers
 
 - Divergent Change
 
@@ -302,7 +280,7 @@ Bloaters are code, methods and classes that have increased to such gargantuan pr
 
   <!-- Whenever you create a subclass for a class, you find yourself needing to create a subclass for another class. -->
 
-### Dispensables
+## Dispensables
 
 <!-- A dispensable is something pointless and unneeded whose absence would make the code cleaner, more efficient and easier to understand. -->
 
@@ -316,7 +294,7 @@ Bloaters are code, methods and classes that have increased to such gargantuan pr
   <!-- A variable, parameter, field, method or class is no longer used (usually because it’s obsolete). -->
 - Duplicated Code
 
-### Couplers
+## Couplers
 
 - Feature Envy
   <!-- A method accesses the data of another object more than its own data. -->
@@ -346,8 +324,9 @@ Bloaters are code, methods and classes that have increased to such gargantuan pr
 - Avoid Leaking of abstractions
 - Align with architecture
 - Use dependency injection
-- How to find bad code
+  <!-- - How to find bad code
   - Git history(most edited files)
+    -->
 
 # wrapping up
 
@@ -385,3 +364,10 @@ Questions?
 TODO
 
 - CAP theorem
+
+## Paradigms
+
+- Procedural programming
+- OOP
+- FP
+- Aspect-oriented programming
