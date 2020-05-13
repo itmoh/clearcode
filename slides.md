@@ -360,6 +360,7 @@ Questions?
 ## Some links
 
 - [Code Refactoring: Learn Code Smells And Level Up Your Game!](https://youtu.be/D4auWwMsEnY)
+- [SOLID](https://ota-solid.now.sh/srp/in-ideal-world)
 
 TODO
 
