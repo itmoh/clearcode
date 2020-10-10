@@ -318,6 +318,12 @@ Bloaters are code, methods and classes that have increased to such gargantuan pr
 - New functionality shouldn’t be created during refactoring.
 - All existing tests must pass after refactoring.
 
+## Testing
+
+### TDD
+
+[clear code TDD](http://www.butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd)
+
 ## Guides
 
 - Easy to replace, not easy to extend
@@ -361,6 +367,10 @@ Questions?
 
 - [Code Refactoring: Learn Code Smells And Level Up Your Game!](https://youtu.be/D4auWwMsEnY)
 - [SOLID](https://ota-solid.now.sh/srp/in-ideal-world)
+- [First wiki](https://c2.com/)
+
+### Books
+- Object Oriented Software Engineering: A Use Case Driven Approach
 
 TODO
 
