@@ -1,13 +1,16 @@
 % Maksym Tarasenko
 
-# CLEAN CODE
+# Why we should care
 
-## Why we should care
-
+- Bussiness do not give a f..k about code
+- You work is not to write code, which work. You work is to write code, that others can maintain
+	- Code is communication
+  - We more read code than write 
 - Do not afraid of changes in code base
 - Better motivation
-- You work is not to write code, which work. You work is to write code, that others can maintain
-  - We more read code than write 
+- Is easier and cheaper to maintain
+- It is most likely correct 
+
 
 # Qualities of clear code
 
@@ -18,23 +21,19 @@
 ## [Good code should...](./What makes good code good?.md)
 
 - **Correct**
+  <!-- possible to demonstrate: Tested -->
 - **Well-designed**
 - **Readable**
-- **Appropriate**
-- **Robust**
+- **Appropriate** - suitable technologies, tools
+- **Robust** - not break anything and it should fail gracefully
+<!-- The code must not break anything and it should fail gracefully. Ideally, it should support configurable logging or other ways to help users and developers identify and diagnose errors. Errors must not be swallowed by the code without a good, and commented, reason. -->
 - **Efficient**
 - **Available**
-- **Usable**
+- **Usable**, buildable, deployable and runnable
 - **Copyrighted and licenced**
 - **Under revision control**
 
-## Clean code
-
-- Obvious for other programmers.
-- Doesn’t contain duplication.
-- Contains a minimal number of classes and other moving parts.
-- Passes all tests.
-- Is easier and cheaper to maintain!
+# Main rules
 
 ## Names
 
@@ -45,19 +44,19 @@
 - Avoid encodings
 - Choose parts of speech well
 	- verbs for fucntions
+	- noun for variables
 - Scope length & name length rule
-> The larger scope- the larger name
-The larger scope - the shorter method and class name
+<!-- The larger scope- the larger name. The larger scope - the shorter method and class name -->
 
 ## Functions
 
 - Function should do one thing
-- The function doing one thing then you couldn’t meaningfully extract another function from it
+<!--The function doing one thing then you couldn’t meaningfully extract another function from it -->
 - Every line of a function should be on the same level of abstraction. And the 1 level above function name
-
-> When you create a code you do up and down through the abstraction and that’s why we need refactoring 
-
--  The first rule:- they should be small. The second rule: - They should be smaller than that
+<!-- When you create a code you do up and down through the abstraction and that’s why we need refactoring -->
+-  Rules for functions:
+	- they should be small
+	- They should be smaller than that
 -  Do not pass booleans into functions - separate functions
 -  Arguments count
 -  Avoid switch statements
@@ -65,20 +64,52 @@ The larger scope - the shorter method and class name
 
 ## Comments
 
--every comment is failure to express yourself
- - Comment lie
-<!-- silently rot, migrate -->
- - DO NOT COMMENT PIECES OF CODE!
- - NO TODO
- - NO COMMENTED CODE
+- every comment is failure to express yourself
+- Comment lie
+  <!-- silently rot, migrate -->
 
-## Work on task
+ - Do not comment pieces of code
+ - No TODO
 
-- Analize reqiurements
-- Build architecture/design
-- Implement
+# How to ensure
+
+- Setup process
+- Follow principles
+- Avoid tech dept
+- Loose coupling and high cohesion
+  <!--
+    Cohesion refers to the degree to which the elements of a module/class belong together, it is suggested that the related code should be close to each other, so we should strive for high cohesion and bind all related code together as close as possible. It has to do with the elements within the module/class.
+  -->
+  <!--
+    Coupling refers to the degree to which the different modules/classes depend on each other, it is suggested that all modules should be independent as far as possible, that's why low coupling. It has to do with the elements among different modules/classes.
+  -->
+- Use patterns/best practices
+- Avoid code smells. Refactoring
 - Test
-- Refactore
+
+## Setup process
+
+#### Mesure
+
+  - Sonar
+<!-- Cyclomatic complexity -->
+  - Coverage
+	- etc.
+
+#### Work process
+
+  - Analize reqiurements
+  - Build architecture/design
+  - Implement
+  - Test
+  - Refactore
+
+#### Ensure
+
+  - Gates
+  - Stylegides/linting of the code
+  - Codereview
+  - etc.
 
 ## Principles
 
@@ -96,24 +127,7 @@ The larger scope - the shorter method and class name
     Abstractions should not depend on details. Details (concrete implementations) should depend on abstractions.
     -->
 
-## How to ensure
-
-- Avoid tech dept
-- Loose coupling and high cohesion
-  <!--
-    Cohesion refers to the degree to which the elements of a module/class belong together, it is suggested that the related code should be close to each other, so we should strive for high cohesion and bind all related code together as close as possible. It has to do with the elements within the module/class.
-  -->
-  <!--
-    Coupling refers to the degree to which the different modules/classes depend on each other, it is suggested that all modules should be independent as far as possible, that's why low coupling. It has to do with the elements among different modules/classes.
-  -->
-- Use patterns/best practices
-- Avoid code smells. Refactoring
-- Testing
-- Stylegides/linting of the code
-- Sonar
-  <!-- Cyclomatic complexity -->
-
-# Tech dept
+## Tech dept
 
 > **Technical debt** is a metaphor that equates software development to financial debt.
 
@@ -155,7 +169,7 @@ The larger scope - the shorter method and class name
  reckless(опрометчивый) prudent(предусмотрительный) deliberate(раздумывать) inadvertent(нечаянный)
 -->
 
-#### Impacts on individual engineers include:
+## Impacts on individual engineers include:
 
 - Technical debt makes it more difficult to add new software value.
 - It makes fixing problems more challenging.
@@ -163,7 +177,7 @@ The larger scope - the shorter method and class name
 - Other job opportunities start looking more appealing.
 - At extreme levels, engineers may contemplate a switch in careers.
 
-#### Impacts on teams include:
+## Impacts on teams include:
 
 - Lower velocity, and greater variance in velocity.
 - More rigidity in task assignment.
@@ -171,7 +185,7 @@ The larger scope - the shorter method and class name
 - Making reliable plans becomes more difficult.
 - Again, lower morale and higher turnover.
 
-#### Organizational impacts include:
+## Organizational impacts include:
 
 - Reduced value of software assets.
 - Greater difficulty in managing the portfolio of those assets.
@@ -196,7 +210,7 @@ The larger scope - the shorter method and class name
 
 ![Coupling and Cohesion](./images/zhZv2.png)
 
-# Patterns
+## Patterns
 
 > **Design patterns** are typical solutions to commonly occurring problems in software design.
 
@@ -241,7 +255,7 @@ The larger scope - the shorter method and class name
 - HOC
 - Render props
 
-# [Antipatterns](https://deviq.com/antipatterns/)
+## [Antipatterns](https://deviq.com/antipatterns/)
 
 > [Software Development AntiPatterns](https://sourcemaking.com/antipatterns/software-development-antipatterns)
 
@@ -269,13 +283,9 @@ The larger scope - the shorter method and class name
 - Add code, that you might need but never will
 - Use lots of variables
 
-# Code smells/Refactoring
-
 ## Code smells
 
 > **code smell** is any characteristic in the source code of a program that possibly indicates a deeper problem
-
-# Groups
 
 ## Bloaters
 
@@ -407,6 +417,8 @@ Bloaters are code, methods and classes that have increased to such gargantuan pr
 11. Composition over inheritence
 12. Practice, practice, practice
 13. Fail fast, recover quickly
+14. Clean during work
+15. Encapslate ugly solutions
 
 ## Kids vs Legends
 
@@ -424,14 +436,3 @@ Questions?
 
 ### Books
 - Object Oriented Software Engineering: A Use Case Driven Approach
-
-TODO
-
-- CAP theorem
-
-## Paradigms
-
-- Procedural programming
-- OOP
-- FP
-- Aspect-oriented programming
