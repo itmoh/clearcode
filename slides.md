@@ -1,12 +1,13 @@
 % Maksym Tarasenko
 
-# CLEAR CODE
+# CLEAN CODE
 
 ## Why we should care
 
 - Do not afraid of changes in code base
-- We more read code than write
 - Better motivation
+- You work is not to write code, which work. You work is to write code, that others can maintain
+  - We more read code than write 
 
 # Qualities of clear code
 
@@ -35,6 +36,50 @@
 - Passes all tests.
 - Is easier and cheaper to maintain!
 
+## Names
+
+- Choose your names thoughfully
+- Communicate your intent
+- Avoid Disinformation
+- Pronouneble Names
+- Avoid encodings
+- Choose parts of speech well
+	- verbs for fucntions
+- Scope length & name length rule
+> The larger scope- the larger name
+The larger scope - the shorter method and class name
+
+## Functions
+
+- Function should do one thing
+- The function doing one thing then you couldn’t meaningfully extract another function from it
+- Every line of a function should be on the same level of abstraction. And the 1 level above function name
+
+> When you create a code you do up and down through the abstraction and that’s why we need refactoring 
+
+-  The first rule:- they should be small. The second rule: - They should be smaller than that
+-  Do not pass booleans into functions - separate functions
+-  Arguments count
+-  Avoid switch statements
+-  No side effect
+
+## Comments
+
+-every comment is failure to express yourself
+ - Comment lie
+<!-- silently rot, migrate -->
+ - DO NOT COMMENT PIECES OF CODE!
+ - NO TODO
+ - NO COMMENTED CODE
+
+## Work on task
+
+- Analize reqiurements
+- Build architecture/design
+- Implement
+- Test
+- Refactore
+
 ## Principles
 
 - **DRY** - Don't repeat yourself
@@ -53,10 +98,7 @@
 
 ## How to ensure
 
-- Patterns/Best practices
-- Stylegides/linting of the code
-- Sonar
-  <!-- Cyclomatic complexity -->
+- Avoid tech dept
 - Loose coupling and high cohesion
   <!--
     Cohesion refers to the degree to which the elements of a module/class belong together, it is suggested that the related code should be close to each other, so we should strive for high cohesion and bind all related code together as close as possible. It has to do with the elements within the module/class.
@@ -64,10 +106,12 @@
   <!--
     Coupling refers to the degree to which the different modules/classes depend on each other, it is suggested that all modules should be independent as far as possible, that's why low coupling. It has to do with the elements among different modules/classes.
   -->
-
-## Coupling and Cohesion
-
-![Coupling and Cohesion](./images/zhZv2.png)
+- Use patterns/best practices
+- Avoid code smells. Refactoring
+- Testing
+- Stylegides/linting of the code
+- Sonar
+  <!-- Cyclomatic complexity -->
 
 # Tech dept
 
@@ -148,6 +192,10 @@
 - Lack of compliance monitoring
 - Incompetence
 
+## Coupling and Cohesion
+
+![Coupling and Cohesion](./images/zhZv2.png)
+
 # Patterns
 
 > **Design patterns** are typical solutions to commonly occurring problems in software design.
@@ -186,6 +234,7 @@
   <!-- Посредник– шаблон, обеспечивающий взаимодействие множества объектов, формируя при этом слабую связанность и избавляя объекты от необходимости явно ссылаться друг на друга. -->
 * Observer
   <!-- Наблюдатель – создает механизм, который позволяет одному объекту получать оповещения от других объектов. -->
+* Front controller pattern
 
 ### React patterns
 
@@ -219,7 +268,6 @@
 - Comments
 - Add code, that you might need but never will
 - Use lots of variables
-- Refectoring the code, because you think it is messy
 
 # Code smells/Refactoring
 
@@ -320,6 +368,9 @@ Bloaters are code, methods and classes that have increased to such gargantuan pr
 
 ## Testing
 
+- You should test
+- tests structure should not  be same as project structure
+
 ### TDD
 
 [clear code TDD](http://www.butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd)
@@ -333,6 +384,7 @@ Bloaters are code, methods and classes that have increased to such gargantuan pr
   <!-- - How to find bad code
   - Git history(most edited files)
     -->
+- Hard code ------------ your code ------------------------ Soft code
 
 # wrapping up
 
@@ -354,6 +406,7 @@ Bloaters are code, methods and classes that have increased to such gargantuan pr
 10. Independent Architecture
 11. Composition over inheritence
 12. Practice, practice, practice
+13. Fail fast, recover quickly
 
 ## Kids vs Legends
 
