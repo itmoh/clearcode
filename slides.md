@@ -385,6 +385,7 @@ Bloaters are code, methods and classes that have increased to such gargantuan pr
 ### TDD
 
 [clear code TDD](http://www.butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd)
+[Is TDD Dead](https://martinfowler.com/articles/is-tdd-dead/)
 
 ## Guides
 
