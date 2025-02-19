@@ -21,3 +21,13 @@ we need to use standartize tools for design diagrams
 ## Decision Outcome
 
 Chosen option: "palntUml", because comes out best.
+
+
+## diagrams
+
+``` plantuml
+@startuml
+Bob -> Alice : hello
+@enduml
+
+```
